@@ -1,0 +1,946 @@
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://purl.org/dc/terms> a rdfs:Class;
+   rdfs:label "terms"@nl .
+
+<http://www.opengis.net/ont/sf> a rdfs:Class;
+   rdfs:label "sf"@nl .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns> a rdfs:Class;
+   rdfs:label "22-rdf-syntax-ns"@nl .
+
+<http://www.w3.org/2000/01/rdf-schema> a rdfs:Class;
+   rdfs:label "rdf-schema"@nl .
+
+<http://www.w3.org/2001/XMLSchema> a rdfs:Class;
+   rdfs:label "XMLSchema"@nl .
+
+<http://www.w3.org/2002/07/owl> a rdfs:Class;
+   rdfs:label "owl"@nl .
+
+<http://www.w3.org/2004/02/skos/core> a rdfs:Class;
+   rdfs:label "core"@nl .
+
+<http://www.w3.org/ns/locn> a rdfs:Class;
+   rdfs:label "locn"@nl .
+
+<http://www.w3.org/ns/prov> a rdfs:Class;
+   rdfs:label "prov"@nl .
+
+<https://data.vlaanderen.be/ns/bestuur> a rdfs:Class;
+   rdfs:label "bestuur"@nl .
+
+<https://data.vlaanderen.be/ns/gebouw> a rdfs:Class;
+   rdfs:label "gebouw"@nl .
+
+<https://data.vlaanderen.be/ns/generiek> a rdfs:Class;
+   rdfs:label "generiek"@nl .
+
+<https://data.vlaanderen.be/ns/perceel> a rdfs:Class;
+   rdfs:label "perceel"@nl .
+
+dc:Location a owl:Class;
+   rdfs:label "Locatie"@nl;
+   rdfs:comment "Een ruimtelijk gebied of benoemde plaats."@nl;
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres> .
+
+rdf:langString a owl:Class;
+   rdfs:label "TODO"@nl;
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres> .
+
+rdfs:label a owl:DatatypeProperty;
+   rdfs:label "label"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "TODO"@nl,
+     "Naam vd straat."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/adres#Straatnaam",
+     "https://data.vlaanderen.be/ns/adres#Locatienaam",
+     "http://purl.org/dc/terms/Location",
+     "https://data.vlaanderen.be/ns/adres#Gemeentenaam";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" .
+
+skos:Concept a owl:Class;
+   rdfs:label "TODO"@nl;
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres> .
+
+skos:prefLabel a owl:DatatypeProperty;
+   rdfs:label "voorkeurslabel"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "TODO"@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/bestuur#Bestuurseenheid";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/2000/01/rdf-schema#Literal" .
+
+<http://www.w3.org/ns/locn#Address> a owl:Class;
+   rdfs:label "Adresvoorstelling"@nl;
+   rdfs:comment "TODO"@nl;
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres> .
+
+<http://www.w3.org/ns/locn#addressArea> a owl:DatatypeProperty;
+   rdfs:label "adresgebied"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "TODO"@nl;
+   rdfs:domain "http://www.w3.org/ns/locn#Address";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" .
+
+<http://www.w3.org/ns/locn#adminUnitL1> a owl:DatatypeProperty;
+   rdfs:label "administratieve eenheid niveau 1"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "TODO"@nl;
+   rdfs:domain "http://www.w3.org/ns/locn#Address";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" .
+
+<http://www.w3.org/ns/locn#adminUnitL2> a owl:DatatypeProperty;
+   rdfs:label "administratieve eenheid niveau 2"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "TODO"@nl;
+   rdfs:domain "http://www.w3.org/ns/locn#Address";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" .
+
+<http://www.w3.org/ns/locn#fullAddress> a owl:DatatypeProperty;
+   rdfs:label "volledig adres"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "TODO"@nl;
+   rdfs:domain "http://www.w3.org/ns/locn#Address";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" .
+
+<http://www.w3.org/ns/locn#geometry> a owl:ObjectProperty;
+   rdfs:label "geometrie"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Geometrie van de plaats of het gebied."@nl,
+     "TODO"@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/generiek#GeografischePositie",
+     "http://purl.org/dc/terms/Location";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.opengis.net/ont/sf#Point",
+     "http://www.w3.org/ns/locn#Geometry" .
+
+<http://www.w3.org/ns/locn#locatorDesignator> a owl:DatatypeProperty;
+   rdfs:label "locatieaanduiding"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "TODO"@nl;
+   rdfs:domain "http://www.w3.org/ns/locn#Address";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/2001/XMLSchema#string" .
+
+<http://www.w3.org/ns/locn#locatorName> a owl:DatatypeProperty;
+   rdfs:label "locatienaam"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "TODO"@nl;
+   rdfs:domain "http://www.w3.org/ns/locn#Address";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" .
+
+<http://www.w3.org/ns/locn#poBox> a owl:DatatypeProperty;
+   rdfs:label "postbus"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "TODO"@nl;
+   rdfs:domain "http://www.w3.org/ns/locn#Address";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/2001/XMLSchema#string" .
+
+<http://www.w3.org/ns/locn#postCode> a owl:DatatypeProperty;
+   rdfs:label "postcode"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "TODO"@nl;
+   rdfs:domain "http://www.w3.org/ns/locn#Address";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/2001/XMLSchema#string" .
+
+<http://www.w3.org/ns/locn#postName> a owl:DatatypeProperty;
+   rdfs:label "postnaam"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "TODO"@nl;
+   rdfs:domain "http://www.w3.org/ns/locn#Address";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" .
+
+<http://www.w3.org/ns/locn#thoroughfare> a owl:DatatypeProperty;
+   rdfs:label "straatnaam"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "TODO"@nl;
+   rdfs:domain "http://www.w3.org/ns/locn#Address";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" .
+
+org:classification a owl:ObjectProperty;
+   rdfs:label "classificatie"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "TODO"@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/bestuur#Bestuurseenheid";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/2004/02/skos/core#Concept" .
+
+prov:wasAttributedTo a owl:ObjectProperty;
+   rdfs:label "toegeschreven aan"@nl;
+   rdfs:comment "TODO"@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/adres#Straatnaam",
+     "https://data.vlaanderen.be/ns/adres#Adres";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "https://data.vlaanderen.be/ns/bestuur#Bestuurseenheid" .
+
+<https://data.vlaanderen.be/ns/adres#Adres> a owl:Class;
+   rdfs:label "Belgisch Adres"@nl;
+   rdfs:comment "Informatie die toelaat om op een gestructureerde en unieke manier te verwijzen naar een gebouweenheid, een ligplaats, een standplaats of een perceel op basis van een gemeentenaam, een straatnaam, een huisnummer en eventueel een busnummer en een postcode."@nl;
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres> .
+
+<https://data.vlaanderen.be/ns/adres#Adres.status> a owl:ObjectProperty;
+   rdfs:label "status"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Actuele toestand van het adres."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/adres#Adres";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/2004/02/skos/core#Concept" .
+
+<https://data.vlaanderen.be/ns/adres#Adreslocator> a owl:Class;
+   rdfs:label "Adreslocator"@nl;
+   rdfs:comment "Menselijk leesbare aanduiding of naam die een gebruiker of applicatie toelaat om het adres te onderscheiden van naburige adressen in de straat, de administratieve eenheid etc waarin het adres ligt."@nl;
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres> .
+
+<https://data.vlaanderen.be/ns/adres#AdresseerbaarObject> a owl:Class;
+   rdfs:label "Adresseerbaar Object"@nl;
+   rdfs:comment "Geografisch object dat met een adres kan worden geïdentificeerd."@nl;
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres> .
+
+<https://data.vlaanderen.be/ns/adres#Adresuitbreiding> a owl:Class;
+   rdfs:label "Adresuitbreiding"@nl;
+   rdfs:comment "Bijkomende gegevens mbt het adres."@nl;
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres> .
+
+<https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer> a owl:DatatypeProperty;
+   rdfs:label "busnummer"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Officieel toegekende alfanumerieke code die wordt toegevoegd aan het huisnummer om meerdere gebouweenheden, standplaatsen, ligplaatsen of percelen te onderscheiden die eenzelfde huisnummer hebben."@nl;
+   rdfs:domain "http://www.w3.org/ns/locn#Address";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/2001/XMLSchema#string";
+   rdfs:subPropertyOf "http://www.w3.org/ns/locn#locatorDesignator" .
+
+<https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer> a owl:DatatypeProperty;
+   rdfs:label "huisnummer"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Alfanumerieke code officieel toegekend aan gebouweenheden, ligplaatsen, standplaatsen of percelen."@nl;
+   rdfs:domain "http://www.w3.org/ns/locn#Address";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/2001/XMLSchema#string";
+   rdfs:subPropertyOf "http://www.w3.org/ns/locn#locatorDesignator" .
+
+<https://data.vlaanderen.be/ns/adres#Gemeentenaam> a owl:Class;
+   rdfs:label "Gemeentenaam"@nl;
+   rdfs:comment "Adrescomponent die verwijst naar de naam ve gemeente, ttz het kleinste administratieve deel van het Belgisch grondgebied waarvan de grenzen enkel door de wetgever kunnen worden gewijzigd."@nl;
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres> .
+
+<https://data.vlaanderen.be/ns/adres#Ligplaats> a owl:Class;
+   rdfs:label "Ligplaats"@nl;
+   rdfs:comment "Een door het bevoegde gemeentelijke orgaan als zodanig aangewezen plaats in het water al dan niet aangevuld met een op de oever aanwezig terrein of een gedeelte daarvan, die bestemd is voor het permanent afmeren van een voor woon-, bedrijfsmatige of recreatieve doeleinden geschikt vaartuig."@nl;
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres> .
+
+<https://data.vlaanderen.be/ns/adres#Locatieaanduiding> a owl:Class;
+   rdfs:label "Locatieaanduiding"@nl;
+   rdfs:comment "Alfanumerieke code die een adreslocator uniek identificeert binnen de straat, administratieve eenheid etc."@nl;
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres> .
+
+<https://data.vlaanderen.be/ns/adres#Locatieaanduiding.aanduiding> a owl:DatatypeProperty;
+   rdfs:label "aanduiding"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Alfanumerieke code waarmee het identificerend deel van een adreslocator wordt aangeduid."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/adres#Locatieaanduiding";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/2001/XMLSchema#string" .
+
+<https://data.vlaanderen.be/ns/adres#Locatieaanduiding.type> a owl:ObjectProperty;
+   rdfs:label "type"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Aard vd locatieaanduiding."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/adres#Locatieaanduiding";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/2004/02/skos/core#Concept" .
+
+<https://data.vlaanderen.be/ns/adres#Locatienaam> a owl:Class;
+   rdfs:label "Locatienaam"@nl;
+   rdfs:comment "Naam of omschrijving vh het geografisch object dat een adreslocator aanduidt."@nl;
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres> .
+
+<https://data.vlaanderen.be/ns/adres#Locatienaam.type> a owl:ObjectProperty;
+   rdfs:label "type"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Aard vh geografisch object."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/adres#Locatienaam";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/2004/02/skos/core#Concept" .
+
+<https://data.vlaanderen.be/ns/adres#Postinfo> a owl:Class;
+   rdfs:label "Postinfo"@nl;
+   rdfs:comment "Adrescomponent die verwijst naar informatie toegekend door de aanbieder van de universele postdienst voor de identificatie van een groepering van adressen in een geografisch gebied voor postale doeleinden."@nl;
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres> .
+
+<https://data.vlaanderen.be/ns/adres#Standplaats> a owl:Class;
+   rdfs:label "Standplaats"@nl;
+   rdfs:comment "Een door het bevoegde gemeentelijke orgaan als zodanig aangewezen terrein of gedeelte daarvan dat bestemd is voor het permanent plaatsen van een niet direct en niet duurzaam met de aarde verbonden en voor woon -, bedrijfsmatige, of recreatieve doeleinden "@nl;
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres> .
+
+<https://data.vlaanderen.be/ns/adres#Straatnaam> a owl:Class;
+   rdfs:label "Straatnaam"@nl;
+   rdfs:comment "Adrescomponent met de naam die officieel werd toegekend aan een straat (baan, doorgang, plein) of aan een gehucht en waaraan adressen kunnen zijn gekoppeld."@nl;
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres> .
+
+<https://data.vlaanderen.be/ns/adres#Straatnaam.status> a owl:ObjectProperty;
+   rdfs:label "status"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Actuele toestand van de straatnaam."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/adres#Straatnaam";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/2004/02/skos/core#Concept" .
+
+<https://data.vlaanderen.be/ns/adres#aanduiding> a owl:ObjectProperty;
+   rdfs:label "aanduiding"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Alfanumerieke code die de locator uniek identificeert binnen de straat, administratieve eenheid etc."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/adres#Adreslocator";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "https://data.vlaanderen.be/ns/adres#Locatieaanduiding" .
+
+<https://data.vlaanderen.be/ns/adres#adresIsGelegenIn> a owl:ObjectProperty;
+   rdfs:label "is gelegen in"@nl;
+   rdfs:comment "Plaats of gebied waarbinnen het Adres gelegen is."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/adres#Adresuitbreiding";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://purl.org/dc/terms/Location" .
+
+<https://data.vlaanderen.be/ns/adres#adreslocator> a owl:ObjectProperty;
+   rdfs:label "adreslocator"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Bijkomende adreslocator."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/adres#Adresuitbreiding";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "https://data.vlaanderen.be/ns/adres#Adreslocator" .
+
+<https://data.vlaanderen.be/ns/adres#busnummer> a owl:DatatypeProperty;
+   rdfs:label "busnummer"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Officieel toegekende alfanumerieke code die wordt toegevoegd aan het huisnummer om meerdere gebouweenheden, standplaatsen, ligplaatsen of percelen te onderscheiden die eenzelfde huisnummer hebben."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/adres#Adres";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/2001/XMLSchema#string" .
+
+<https://data.vlaanderen.be/ns/adres#gemeentenaam> a owl:DatatypeProperty;
+   rdfs:label "gemeentenaam"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Gemeentenaam vh adres."@nl;
+   rdfs:domain "http://www.w3.org/ns/locn#Address";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString";
+   rdfs:subPropertyOf "http://www.w3.org/ns/locn#postName" .
+
+<https://data.vlaanderen.be/ns/adres#heeftGemeentenaam> a owl:ObjectProperty;
+   rdfs:label "heeft gemeentenaam"@nl;
+   rdfs:comment "Gemeentenaamcomponent van het adres."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/adres#Adres";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "https://data.vlaanderen.be/ns/adres#Gemeentenaam" .
+
+<https://data.vlaanderen.be/ns/adres#heeftPostinfo> a owl:ObjectProperty;
+   rdfs:label "heeft postinfo"@nl;
+   rdfs:comment "Postinfocomponent van het adres."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/adres#Adres";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "https://data.vlaanderen.be/ns/adres#Postinfo" .
+
+<https://data.vlaanderen.be/ns/adres#heeftStraatnaam> a owl:ObjectProperty;
+   rdfs:label "heeft straatnaam"@nl;
+   rdfs:comment "Straatnaamcomponent van het adres."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/adres#Adres";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "https://data.vlaanderen.be/ns/adres#Straatnaam" .
+
+<https://data.vlaanderen.be/ns/adres#homoniemToevoeging> a owl:DatatypeProperty;
+   rdfs:label "homoniemtoevoeging"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Toevoeging om dubbele straatnamen (straatnamen met dezelfde naam maar andere ligging in de gemeente en eigen adressen) van elkaar te onderscheiden."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/adres#Straatnaam";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/2001/XMLSchema#string" .
+
+<https://data.vlaanderen.be/ns/adres#huisnummer> a owl:DatatypeProperty;
+   rdfs:label "huisnummer"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Alfanumerieke code officieel toegekend aan gebouweenheden, ligplaatsen, standplaatsen of percelen."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/adres#Adres";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/2001/XMLSchema#string" .
+
+<https://data.vlaanderen.be/ns/adres#isAfgeleidVan> a owl:ObjectProperty;
+   rdfs:label "is afgeleid van"@nl;
+   rdfs:comment "Gemeente waarvan de gemeentenaam is afgeleid."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/adres#Gemeentenaam";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "https://data.vlaanderen.be/ns/generiek#AdministratieveEenheid" .
+
+<https://data.vlaanderen.be/ns/adres#isToegekendAan> a owl:ObjectProperty;
+   rdfs:label "is toegekend aan"@nl;
+   rdfs:comment "Adresseerbaar object waaraan het adres is toegekend."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/adres#Adres";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "https://data.vlaanderen.be/ns/adres#AdresseerbaarObject" .
+
+<https://data.vlaanderen.be/ns/adres#isVerrijktMet> a owl:ObjectProperty;
+   rdfs:label "is verrijkt met"@nl;
+   rdfs:comment "Verwijzing naar een adresuitbreiding. "@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/adres#Adres";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "https://data.vlaanderen.be/ns/adres#Adresuitbreiding" .
+
+<https://data.vlaanderen.be/ns/adres#land> a owl:DatatypeProperty;
+   rdfs:label "land"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Land waarin het adres gelegen is."@nl;
+   rdfs:domain "http://www.w3.org/ns/locn#Address";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString";
+   rdfs:subPropertyOf "http://www.w3.org/ns/locn#adminUnitL1" .
+
+<https://data.vlaanderen.be/ns/adres#naam> a owl:ObjectProperty;
+   rdfs:label "label"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Naam of omschrijving vh het geografisch object dat de locator aanduidt."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/adres#Adreslocator";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "https://data.vlaanderen.be/ns/adres#Locatienaam" .
+
+<https://data.vlaanderen.be/ns/adres#niveau> a owl:ObjectProperty;
+   rdfs:label "niveau"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Het niveau waarnaar de locator verwijst."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/adres#Adreslocator";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/2004/02/skos/core#Concept" .
+
+<https://data.vlaanderen.be/ns/adres#officieelToegekend> a owl:DatatypeProperty;
+   rdfs:label "officieel toegekend"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Geeft aan of het adres officieel door de adresbeheerder is toegekend."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/adres#Adres";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/2001/XMLSchema#boolean" .
+
+<https://data.vlaanderen.be/ns/adres#positie> a owl:ObjectProperty;
+   rdfs:label "positie"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Positie van een karakeristiek punt dat de positie van het adres vertegenwoordigt volgens een bepaalde specificatie en inclusief informatie over de herkomst van de positie."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/adres#Adres";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "https://data.vlaanderen.be/ns/generiek#GeografischePositie";
+   rdfs:subPropertyOf "http://www.w3.org/ns/locn#geometry" .
+
+<https://data.vlaanderen.be/ns/adres#postcode> a owl:DatatypeProperty;
+   rdfs:label "postcode"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Code waarmee het geografisch gebied dat de adressen voor postale doeleinden groepeert aanduidt."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/adres#Postinfo";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/2001/XMLSchema#string" .
+
+<https://data.vlaanderen.be/ns/adres#postnaam> a owl:DatatypeProperty;
+   rdfs:label "postnaam"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Naam waarmee het geografisch gebied dat de adressen voor postale doeleinden groepeert kan worden aangeduid."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/adres#Postinfo";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" .
+
+<https://data.vlaanderen.be/ns/adres#verwijstNaar> a owl:ObjectProperty;
+   rdfs:label "verwijst naar"@nl;
+   rdfs:comment "Adres waarvan de adresvoorstelling is afgeleid."@nl;
+   rdfs:domain "http://www.w3.org/ns/locn#Address";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "https://data.vlaanderen.be/ns/adres#Adres" .
+
+<https://data.vlaanderen.be/ns/adres#volledigAdres> a owl:DatatypeProperty;
+   rdfs:label "volledig adres"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Het complete adres in één string, al dan niet geformatteerd."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/adres#Adresuitbreiding";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" .
+
+<https://data.vlaanderen.be/ns/bestuur#Bestuurseenheid> a owl:Class;
+   rdfs:label "Administrative Unit"@en,
+     "Bestuurseenheid"@nl;
+   rdfs:comment "Public, governing organization associated with a territorially defined area and with certain domains in which it can govern."@en,
+     "Publieke, bestuurlijke organisatie verbonden aan een territoriaal omschreven gebied met bepaalde verantwoordelijkheden waarbinnen het bestuurshandelingen kan stellen."@nl;
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres> .
+
+<https://data.vlaanderen.be/ns/bestuur#werkingsgebied> a owl:ObjectProperty;
+   rdfs:label "werkingsgebied"@nl,
+     "governance area"@en;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Geographical area where the administrative unit has certain responsibilities in which it can perform acts of governance."@en,
+     "Geografische gebied waarbinnen de bestuurseenheid bepaalde verantwoordelijkheden heeft waarbinnen het bestuurshandelingen kan stellen."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/bestuur#Bestuurseenheid";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/ns/prov#Location";
+   rdfs:subPropertyOf "http://purl.org/dc/terms/spatial" .
+
+<https://data.vlaanderen.be/ns/gebouw#Gebouw> a owl:Class;
+   rdfs:label "Gebouw"@nl;
+   rdfs:comment "Een gesloten en/of overdekt, bovengronds of ondergronds bouwwerk, dat dient of bestemd is, ofwel om mensen, dieren en voorwerpen onder te brengen, ofwel om economische goederen te vervaardigen of diensten te verstrekken. Een gebouw verwijst naar gelijk welke structuur die op blijvende wijze op een terrein opgetrokken of gebouwd wordt."@nl;
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres> .
+
+<https://data.vlaanderen.be/ns/gebouw#Gebouw.adres> a owl:ObjectProperty;
+   rdfs:label "adres"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Adresvoorstelling die bij het gebouw hoort."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/gebouw#Gebouw";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/ns/locn#Address" .
+
+<https://data.vlaanderen.be/ns/gebouw#Gebouw.geometrie> a owl:ObjectProperty;
+   rdfs:label "geometrie"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "2D- of 2.5D-geometrische voorstelling van het gebouw."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/gebouw#Gebouw";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "https://data.vlaanderen.be/ns/gebouw#2DGebouwgeometrie" .
+
+<https://data.vlaanderen.be/ns/gebouw#Gebouw.status> a owl:ObjectProperty;
+   rdfs:label "status"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Fase van de levensloop waarin het gebouw zich bevindt."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/gebouw#Gebouw";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/2004/02/skos/core#Concept" .
+
+<https://data.vlaanderen.be/ns/gebouw#Gebouweenheid> a owl:Class;
+   rdfs:label "Gebouweenheid"@nl;
+   rdfs:comment "De kleinste eenheid binnen een gebouw die geschikt is voor woon-, bedrijfsmatige, of recreatieve doeleinden en die ontsloten wordt via een eigen afsluitbare toegang vanaf de openbare weg, een erf of een gedeelde circulatieruimte. Een gebouweenheid is in functioneel opzicht zelfstandig. Daarnaast kan een gebouweenheid ook een gemeenschappelijk deel zijn."@nl;
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres> .
+
+<https://data.vlaanderen.be/ns/gebouw#Gebouweenheid.adres> a owl:ObjectProperty;
+   rdfs:label "adres"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Adresvoorstelling die bij de gebouweenheid hoort."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/gebouw#Gebouweenheid";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/ns/locn#Address" .
+
+<https://data.vlaanderen.be/ns/gebouw#Gebouweenheid.geometrie> a owl:ObjectProperty;
+   rdfs:label "geometrie"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "2D-geometrische voorstelling van de gebouweenheid."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/gebouw#Gebouweenheid";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/ns/locn#Geometry" .
+
+<https://data.vlaanderen.be/ns/gebouw#Gebouweenheid.status> a owl:ObjectProperty;
+   rdfs:label "gebouweenheidstatus"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Fase van de levensloop waarin de gebouweenheid zich bevindt."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/gebouw#Gebouweenheid";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/2004/02/skos/core#Concept" .
+
+<https://data.vlaanderen.be/ns/gebouw#aantalBovengrondseVerdiepingen> a owl:DatatypeProperty;
+   rdfs:label "aantal bovengrondse verdiepingen"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Totaal van het aantal bovengrondse gebouwlagen, bekeken over alle gebouwdelen heen."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/gebouw#Gebouw";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/2001/XMLSchema#integer" .
+
+<https://data.vlaanderen.be/ns/gebouw#aantalOndergrondseVerdiepingen> a owl:DatatypeProperty;
+   rdfs:label "aantal ondergrondse verdiepingen"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Totaal van het aantal ondergrondse gebouwlagen, bekeken over alle gebouwdelen heen."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/gebouw#Gebouw";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/2001/XMLSchema#integer" .
+
+<https://data.vlaanderen.be/ns/gebouw#bestaatUit> a owl:ObjectProperty;
+   rdfs:label "bestaat uit"@nl;
+   rdfs:comment "De gebouweenheden die tot het gebouw behoren."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/gebouw#Gebouw";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "https://data.vlaanderen.be/ns/gebouw#Gebouweenheid" .
+
+<https://data.vlaanderen.be/ns/gebouw#bouwjaar> a owl:ObjectProperty;
+   rdfs:label "bouwjaar"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Datum waarop het gebouw voltooid werd."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/gebouw#Gebouw";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "https://data.vlaanderen.be/ns/generiek#Gebeurtenisdatum" .
+
+<https://data.vlaanderen.be/ns/gebouw#functie> a owl:ObjectProperty;
+   rdfs:label "functie"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Functie waarvoor de gebouweenheid in de realiteit (zoals vastgesteld op het terrein) gebruikt wordt."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/gebouw#Gebouweenheid";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/2004/02/skos/core#Concept" .
+
+<https://data.vlaanderen.be/ns/gebouw#gebouwnaam> a owl:DatatypeProperty;
+   rdfs:label "gebouwnaam"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Naam van het gebouw."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/gebouw#Gebouw";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" .
+
+<https://data.vlaanderen.be/ns/gebouw#laatsteRenovatie> a owl:ObjectProperty;
+   rdfs:label "laatste renovatie"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Datum waarop het gebouw het laatst gerenoveerd werd."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/gebouw#Gebouw";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "https://data.vlaanderen.be/ns/generiek#Gebeurtenisdatum" .
+
+<https://data.vlaanderen.be/ns/gebouw#ligtOp> a owl:ObjectProperty;
+   rdfs:label "ligt op"@nl;
+   rdfs:comment "De percelen waarmee het gebouw officieel geassocieerd is."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/gebouw#Gebouw";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "https://data.vlaanderen.be/ns/perceel#Perceel" .
+
+<https://data.vlaanderen.be/ns/gebouw#locatieAanduiding> a owl:ObjectProperty;
+   rdfs:label "locatieaanduiding"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Alfanumerieke code die een adreslocator uniek identificeert binnen de straat, administratieve eenheid etc."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/gebouw#Gebouweenheid";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "https://data.vlaanderen.be/ns/adres#Locatieaanduiding" .
+
+<https://data.vlaanderen.be/ns/generiek#AdministratieveEenheid> a owl:Class;
+   rdfs:label "Administratieve Eenheid"@nl;
+   rdfs:comment "Bestuurlijke eenheid waar een lidstaat rechtsbevoegdheid heeft en/of uitoefent, in het kader van lokaal, regionaal of nationaal bestuur."@nl;
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres> .
+
+<https://data.vlaanderen.be/ns/generiek#GeografischePositie> a owl:Class;
+   rdfs:label "Geografische Positie"@nl;
+   rdfs:comment "Geografische positie aangegeven dmv een punt."@nl;
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres> .
+
+<https://data.vlaanderen.be/ns/generiek#default> a owl:DatatypeProperty;
+   rdfs:label "default"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Geeft aan of de positie een default positie is."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/generiek#GeografischePositie";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/2001/XMLSchema#boolean" .
+
+<https://data.vlaanderen.be/ns/generiek#methode> a owl:ObjectProperty;
+   rdfs:label "methode"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "De manier waarop het punt werd bepaald."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/generiek#GeografischePositie";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/2004/02/skos/core#Concept" .
+
+<https://data.vlaanderen.be/ns/generiek#specificatie> a owl:ObjectProperty;
+   rdfs:label "specificatie"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:comment "Het type object op basis waarvan het punt werd bepaald."@nl;
+   rdfs:domain "https://data.vlaanderen.be/ns/generiek#GeografischePositie";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/2004/02/skos/core#Concept" .
+
+<https://data.vlaanderen.be/ns/perceel#Perceel> a owl:Class;
+   rdfs:label "Perceel"@nl;
+   rdfs:comment "Deel van het grondgebied officieel vastgesteld met een kadastraal of administratief doel."@nl;
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres> .
+
+<https://data.vlaanderen.be/ns/perceel#adres> a owl:ObjectProperty;
+   rdfs:label "TODO"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "0";
+   rdfs:domain "https://data.vlaanderen.be/ns/perceel#Perceel";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/ns/locn#Address" .
+
+<https://data.vlaanderen.be/ns/perceel#geldigheidsperiode> a rdf:Property;
+   rdfs:label "TODO"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "0";
+   rdfs:domain "https://data.vlaanderen.be/ns/perceel#Perceel";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres> .
+
+<https://data.vlaanderen.be/ns/perceel#geometrie> a owl:ObjectProperty;
+   rdfs:label "TODO"@nl;
+   <http://w3.org/ns/shacl#maxCount> "1";
+   <http://w3.org/ns/shacl#minCount> "1";
+   rdfs:domain "https://data.vlaanderen.be/ns/perceel#Perceel";
+   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+   rdfs:range "http://www.w3.org/ns/locn#Geometry" .
+
+<https://data.vlaanderen.be/ns/adres> a owl:Ontology;
+   rdfs:label "adres"@nl,
+     "adres"@en;
+   dc:contributor [
+     a <http://www.w3.org/ns/person#Person>;
+     schema:affiliation [
+       foaf:homepage "https://www.leuven.be";
+       foaf:name "Stad Leuven"
+  ];
+     foaf:first_name "Michaël";
+     foaf:last_name "Sibiet";
+     foaf:mbox "Michael.Sibiet@leuven.be"
+],  [
+     a <http://www.w3.org/ns/person#Person>;
+     schema:affiliation [
+       foaf:homepage "http://idlab.ugent.be";
+       foaf:name "imec - UGent"
+  ];
+     foaf:first_name "Dieter";
+     foaf:last_name "De Paepe";
+     foaf:mbox "dieter.depaepe@ugent.be"
+],  [
+     a <http://www.w3.org/ns/person#Person>;
+     schema:affiliation [
+       foaf:homepage "https://www.vmm.be";
+       foaf:name "VMM"
+  ];
+     foaf:first_name "Katleen";
+     foaf:last_name "Miserez";
+     foaf:mbox "k.miserez@vmm.be"
+],  [
+     a <http://www.w3.org/ns/person#Person>;
+     schema:affiliation [
+       foaf:homepage "https://www.fednot.be";
+       foaf:name "Fednot"
+  ];
+     foaf:first_name "Paul";
+     foaf:last_name "Verbeeck";
+     foaf:mbox "Paul.Verbeeck@fednot.be"
+],  [
+     a <http://www.w3.org/ns/person#Person>;
+     schema:affiliation [
+       foaf:homepage "https://www.telenet.be";
+       foaf:name "Telenet"
+  ];
+     foaf:first_name "Koen";
+     foaf:last_name "D'Haen";
+     foaf:mbox "koen.dhaen1@staff.telenet.be"
+],  [
+     a <http://www.w3.org/ns/person#Person>;
+     schema:affiliation [
+       foaf:homepage "http://idlab.ugent.be";
+       foaf:name "imec - UGent"
+  ];
+     foaf:first_name "Erik";
+     foaf:last_name "Mannens";
+     foaf:mbox "erik.mannens@ugent.be"
+],  [
+     a <http://www.w3.org/ns/person#Person>;
+     schema:affiliation [
+       foaf:homepage "https://overheid.vlaanderen.be/informatie-vlaanderen";
+       foaf:name "Informatie Vlaanderen"
+  ];
+     foaf:first_name "Barbara";
+     foaf:last_name "Van Broeckhoven";
+     foaf:mbox "barbara.vanbroeckhoven@kb.vlaanderen.be"
+],  [
+     a <http://www.w3.org/ns/person#Person>;
+     schema:affiliation [
+       foaf:homepage "https://stad.gent";
+       foaf:name "Stad Gent"
+  ];
+     foaf:first_name "Diedrik";
+     foaf:last_name "Gaus";
+     foaf:mbox "Diedrik.Gaus@stad.gent"
+],  [
+     a <http://www.w3.org/ns/person#Person>;
+     schema:affiliation [
+       foaf:homepage "https://www.vlaamsbrabant.be";
+       foaf:name "Provincie Vlaams-Brabant"
+  ];
+     foaf:first_name "Ireen";
+     foaf:last_name "Librecht";
+     foaf:mbox "ireen.librecht@vlaamsbrabant.be"
+],  [
+     a <http://www.w3.org/ns/person#Person>;
+     schema:affiliation [
+       foaf:homepage "https://www.antwerpen.be";
+       foaf:name "Stad Antwerpen"
+  ];
+     foaf:first_name "Christiaan";
+     foaf:last_name "Bos";
+     foaf:mbox "christiaan.bos@stad.antwerpen.be"
+],  [
+     a <http://www.w3.org/ns/person#Person>;
+     schema:affiliation [
+       foaf:homepage "https://overheid.vlaanderen.be/informatie-vlaanderen";
+       foaf:name "Informatie Vlaanderen"
+  ];
+     foaf:first_name "Katrien";
+     foaf:last_name "Geerts";
+     foaf:mbox "katrien.geerts@kb.vlaanderen.be"
+],  [
+     a <http://www.w3.org/ns/person#Person>;
+     schema:affiliation [
+       foaf:homepage "https://overheid.vlaanderen.be/informatie-vlaanderen";
+       foaf:name "Informatie Vlaanderen"
+  ];
+     foaf:first_name "Raf";
+     foaf:last_name "Buyle";
+     foaf:mbox "raf.buyle@kb.vlaanderen.be"
+],  [
+     a <http://www.w3.org/ns/person#Person>;
+     schema:affiliation [
+       foaf:homepage "https://www.vmsw.be";
+       foaf:name "VMSW"
+  ];
+     foaf:first_name "Wout";
+     foaf:last_name "Groniger";
+     foaf:mbox "Wout.groniger@vmsw.be"
+],  [
+     a <http://www.w3.org/ns/person#Person>;
+     schema:affiliation [
+       foaf:homepage "http://idlab.ugent.be";
+       foaf:name "imec - UGent"
+  ];
+     foaf:first_name "Laurens";
+     foaf:last_name "De Vocht";
+     foaf:mbox "laurens.devocht@ugent.be"
+],  [
+     a <http://www.w3.org/ns/person#Person>;
+     schema:affiliation [
+       foaf:homepage "https://www.wonenvlaanderen.be";
+       foaf:name "Wonen-Vlaanderen"
+  ];
+     foaf:first_name "Olivier";
+     foaf:last_name "Heyvaert";
+     foaf:mbox "olivier.heyvaert@rwo.vlaanderen.be"
+],  [
+     a <http://www.w3.org/ns/person#Person>;
+     schema:affiliation [
+       foaf:homepage "http://tenforce.com";
+       foaf:name "Tenforce"
+  ];
+     foaf:first_name "Bert";
+     foaf:last_name "Van Nuffelen";
+     foaf:mbox "bert.van.nuffelen@tenforce.com"
+];
+   rdfs:seeAlso <http://purl.org/dc/terms>,
+     <http://www.w3.org/ns/locn>,
+     <http://www.w3.org/2000/01/rdf-schema>,
+     <http://www.w3.org/2004/02/skos/core>,
+     <http://www.w3.org/2002/07/owl>,
+     <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
+     <https://data.vlaanderen.be/ns/gebouw>,
+     <http://www.w3.org/ns/prov>,
+     <http://www.w3.org/2001/XMLSchema>,
+     <http://www.opengis.net/ont/sf>,
+     <https://data.vlaanderen.be/ns/bestuur>,
+     <https://data.vlaanderen.be/ns/generiek>,
+     <https://data.vlaanderen.be/ns/perceel>;
+   foaf:maker [
+     a <http://www.w3.org/ns/person#Person>;
+     schema:affiliation [
+       foaf:homepage "https://overheid.vlaanderen.be/informatie-vlaanderen";
+       foaf:name "Informatie Vlaanderen"
+  ];
+     foaf:first_name "Jan";
+     foaf:last_name "Laporte";
+     foaf:mbox "jan.laporte@kb.vlaanderen.be"
+],  [
+     a <http://www.w3.org/ns/person#Person>;
+     schema:affiliation [
+       foaf:homepage "https://overheid.vlaanderen.be/informatie-vlaanderen";
+       foaf:name "Informatie Vlaanderen"
+  ];
+     foaf:first_name "Ruben";
+     foaf:last_name "Capiau";
+     foaf:mbox "ruben.capiau@kb.vlaanderen.be"
+],  [
+     a <http://www.w3.org/ns/person#Person>;
+     schema:affiliation [
+       foaf:homepage "https://overheid.vlaanderen.be/informatie-vlaanderen";
+       foaf:name "Informatie Vlaanderen"
+  ];
+     foaf:first_name "Geert";
+     foaf:last_name "Thijs";
+     foaf:mbox "geert.thijs@kb.vlaanderen.be"
+],  [
+     a <http://www.w3.org/ns/person#Person>;
+     schema:affiliation [
+       foaf:homepage "https://overheid.vlaanderen.be/informatie-vlaanderen";
+       foaf:name "Informatie Vlaanderen"
+  ];
+     foaf:first_name "Ziggy";
+     foaf:last_name "Vanlishout";
+     foaf:mbox "siegfried.vanlishout@kb.vlaanderen.be"
+],  [
+     a <http://www.w3.org/ns/person#Person>;
+     schema:affiliation [
+       foaf:homepage "https://overheid.vlaanderen.be/informatie-vlaanderen";
+       foaf:name "Informatie Vlaanderen"
+  ];
+     foaf:first_name "Veerle";
+     foaf:last_name "Beyaert";
+     foaf:mbox "veerle.beyaert@kb.vlaanderen.be"
+] .
